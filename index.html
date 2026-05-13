@@ -8,14 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* ব্যাকগ্রাউন্ড কালার - একদম কালো না, প্রিমিয়াম ডার্ক গ্রে */
             --bg-color: #1e293b; 
-            --card-bg: #334155; /* একটু হালকা গ্রে */
+            --card-bg: #334155; 
             --text-white: #f8fafc;
-            --accent-color: #38bdf8; /* স্কাই ব্লু হাইলাইট */
+            --accent-color: #38bdf8; 
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -33,9 +32,7 @@
             text-align: center;
         }
 
-        .profile-header {
-            margin-bottom: 50px;
-        }
+        .profile-header { margin-bottom: 50px; }
 
         .profile-name {
             font-size: 45px;
@@ -53,15 +50,8 @@
             letter-spacing: 4px;
         }
 
-        .cv-list {
-            list-style: none;
-            /* মাউস সরালে যেন সব আবার ঠিক হয়ে যায় */
-            transition: all 0.5s ease;
-        }
-
-        .cv-item {
-            margin-bottom: 20px;
-        }
+        .cv-list { list-style: none; transition: all 0.5s ease; }
+        .cv-item { margin-bottom: 20px; }
 
         .cv-link {
             display: flex;
@@ -76,13 +66,27 @@
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            
-            /* স্মুথ বড় হওয়ার ইফেক্ট */
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
         }
 
-        /* মাউস নিলে বড় হবে */
-        .cv-link:hover {
+        /* ল্যাপটপ/মাউস ইউজারদের জন্য Hover */
+        @media (hover: hover) {
+            .cv-link:hover {
+                transform: scale(1.1);
+                background: #475569;
+                border-color: var(--accent-color);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+                z-index: 5;
+            }
+            .cv-list:hover .cv-item:not(:hover) {
+                opacity: 0.4;
+                transform: scale(0.95);
+            }
+        }
+
+        /* মোবাইল/টাচ ইউজারদের জন্য Special Class */
+        .cv-link.mobile-active {
             transform: scale(1.1);
             background: #475569;
             border-color: var(--accent-color);
@@ -90,22 +94,8 @@
             z-index: 5;
         }
 
-        /* মাউস নিলে অন্যগুলো হালকা ঝাপসা হবে */
-        .cv-list:hover .cv-item:not(:hover) {
-            opacity: 0.4;
-            transform: scale(0.95);
-        }
-
-        .emoji-box {
-            font-size: 26px;
-            margin-right: 20px;
-        }
-
-        .arrow {
-            font-size: 20px;
-            color: var(--accent-color);
-            transition: 0.3s;
-        }
+        .emoji-box { font-size: 26px; margin-right: 20px; }
+        .arrow { font-size: 20px; color: var(--accent-color); transition: 0.3s; }
 
         .footer {
             margin-top: 60px;
@@ -176,6 +166,39 @@
             Elite Series Portfolio • 2026
         </div>
     </div>
+
+    <script>
+        // মোবাইলের জন্য ডাবল ট্যাপ লজিক
+        const links = document.querySelectorAll('.cv-link');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // চেক করবে এটি টাচ ডিভাইস কি না
+                if (window.matchMedia("(hover: none)").matches) {
+                    if (!this.classList.contains('mobile-active')) {
+                        // যদি আগে থেকে এক্টিভ না থাকে, তবে ইভেন্ট আটকাবে এবং বড় হবে
+                        e.preventDefault();
+                        
+                        // অন্য সব লিঙ্ক থেকে এক্টিভ ক্লাস রিমুভ করবে
+                        links.forEach(l => l.classList.remove('mobile-active'));
+                        
+                        // বর্তমান লিঙ্কে এক্টিভ ক্লাস দিবে (বড় হবে)
+                        this.classList.add('mobile-active');
+                    } else {
+                        // দ্বিতীয় ক্লিকে লিঙ্ক ওপেন হবে (স্বাভাবিক কাজ করবে)
+                        this.classList.remove('mobile-active');
+                    }
+                }
+            });
+        });
+
+        // স্ক্রিনের অন্য কোথাও ক্লিক করলে জুম আউট হবে
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.cv-link')) {
+                links.forEach(l => ssssl.classList.remove('mobile-active'));
+            }
+        });
+    </script>
 
 </body>
 </html>
