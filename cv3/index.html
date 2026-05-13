@@ -1,1 +1,200 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional CV - Rejaul Karim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e272e;
+            --accent: #0984e3;
+            --gold: #d4af37; /* NSDA হাইলাইটের জন্য গোল্ডেন কালার */
+            --bg-gray: #f4f7f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', 'Segoe UI', sans-serif; }
+
+        body { background-color: #ced6e0; padding: 20px 0; }
+
+        .cv-container {
+            background-color: #ffffff;
+            width: 210mm;
+            height: 297mm;
+            margin: auto;
+            display: flex;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+        }
+
+        /* Side Panel */
+        .sidebar {
+            width: 32%;
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 40px 20px;
+        }
+
+        .profile-img {
+            width: 140px; height: 140px;
+            border-radius: 12px;
+            border: 3px solid var(--accent);
+            margin: 0 auto 25px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .sidebar h2 {
+            font-size: 14px; text-transform: uppercase; color: var(--accent);
+            margin: 25px 0 10px; border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 5px;
+        }
+
+        /* NSDA Special Highlight in Sidebar */
+        .nsda-badge-sidebar {
+            background: linear-gradient(45deg, #b8860b, #d4af37);
+            color: #000;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 800;
+            text-align: center;
+            margin-top: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .info-row { font-size: 11.5px; margin-bottom: 10px; display: flex; align-items: center; color: #dfe6e9; }
+        .info-row i { margin-right: 10px; color: var(--accent); width: 14px; }
+
+        /* Main Content */
+        .main { width: 68%; padding: 50px 40px; color: #2d3436; }
+
+        .header-area { margin-bottom: 35px; }
+        .header-area h1 { font-size: 40px; font-weight: 800; color: var(--primary); line-height: 1; }
+        .header-area p { font-size: 16px; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-top: 8px; }
+
+        .section-title {
+            font-size: 17px; font-weight: 800; color: var(--primary);
+            margin-bottom: 15px; border-left: 5px solid var(--accent); padding-left: 12px;
+            text-transform: uppercase; background: #f8f9fa; padding-top: 5px; padding-bottom: 5px;
+        }
+
+        /* NSDA Highlight Box in Main Content */
+        .nsda-highlight-box {
+            border: 2px solid var(--gold);
+            background-color: #fffdf0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+        .nsda-highlight-box i { font-size: 30px; color: var(--gold); margin-right: 15px; }
+        .nsda-text b { color: #b8860b; font-size: 16px; }
+
+        .job-item { margin-bottom: 20px; }
+        .job-top { display: flex; justify-content: space-between; font-weight: 700; font-size: 14px; }
+        .company { font-size: 13px; color: var(--accent); font-weight: 600; }
+
+        .bullet-points { padding-left: 15px; margin-top: 8px; list-style-type: square; }
+        .bullet-points li { font-size: 12.5px; line-height: 1.6; color: #444; margin-bottom: 4px; }
+
+        .edu-tag { background: #f1f2f6; padding: 10px; border-radius: 6px; margin-bottom: 10px; font-size: 13px; }
+
+        @media print { body { padding: 0; } .cv-container { box-shadow: none; } }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <img src="https://lh3.googleusercontent.com/d/1AUSmyr1rJgOnt9qzfqT65-D58Gf4AotT" class="profile-img">
+            
+            <h2>Contact</h2>
+            <div class="info-row"><i class="fas fa-phone"></i> 01517824188</div>
+            <div class="info-row"><i class="fas fa-envelope"></i> rejaulakash@gmail.com</div>
+            <div class="info-row"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
+
+            <h2>Top Credentials</h2>
+            <div class="nsda-badge-sidebar">NSDA CERTIFIED LEVEL-2</div>
+            <div style="font-size: 10px; text-align: center; margin-top: 5px; color: #aaa;">Mobile Phone Servicing</div>
+
+            <h2>Technical Expertise</h2>
+            <div class="info-row"><i class="fas fa-check-circle"></i> IoT Hardware Repair</div>
+            <div class="info-row"><i class="fas fa-check-circle"></i> RMA Operations Lead</div>
+            <div class="info-row"><i class="fas fa-check-circle"></i> Motherboard Diagnosis</div>
+            <div class="info-row"><i class="fas fa-check-circle"></i> QC Management</div>
+
+            <h2 style="margin-top:auto">Languages</h2>
+            <div class="info-row"><i class="fas fa-language"></i> Bengali (Native)</div>
+            <div class="info-row"><i class="fas fa-language"></i> English (Intermediate)</div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <header class="header-area">
+                <h1>REJAUL KARIM</h1>
+                <p>Technical Executive (Hardware Operations)</p>
+            </header>
+
+            <!-- NSDA MAJOR HIGHLIGHT -->
+            <div class="nsda-highlight-box">
+                <i class="fas fa-certificate"></i>
+                <div class="nsda-text">
+                    <b>NSDA Certified Professional (Level-2)</b><br>
+                    <small style="color: #666;">National Skills Development Authority | Govt. of Bangladesh</small>
+                </div>
+            </div>
+
+            <section class="section">
+                <h2 class="section-title">Professional Profile</h2>
+                <p style="font-size: 13px; line-height: 1.7; color: #444;">
+                    Expert technical professional with **4+ years of experience** in the IoT and electronics industry. Specialized in **RMA Management** and deep-level hardware diagnostics. Proven track record in repairing complex IoT devices and ensuring high-quality production standards.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-h"><h2 class="section-title">Work Experience</h2></h2>
+                <div class="job-item">
+                    <div class="job-top"><span>Technical Executive (RMA & Repair)</span><span>2021 – Present</span></div>
+                    <span class="company">Inovace Technologies (IoT & Software Firm)</span>
+                    <ul class="bullet-points">
+                        <li>Managing the complete RMA cycle for smart IoT products.</li>
+                        <li>Executing component-level repairs on faulty PCAs and IoT modules.</li>
+                        <li>Lead fault diagnosis specialist for returned merchandise.</li>
+                        <li>Providing critical technical insights for product hardware updates.</li>
+                    </ul>
+                </div>
+
+                <div class="job-item">
+                    <div class="job-top"><span>Technical Support Specialist</span><span>2020 – 2021</span></div>
+                    <span class="company">Electronic Manufacturing Sector</span>
+                    <ul class="bullet-points">
+                        <li>Supervised initial production QC and hardware testing protocols.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="edu-tag">
+                    <b>BSS Honors (Sociology)</b> | National University (2024)
+                </div>
+                <div class="edu-tag">
+                    <b>HSC & SSC (Science Background)</b> | Passed (2018/2016)
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Additional Training</h2>
+                <ul class="bullet-points">
+                    <li><b>Electronics Training (Best Trainee)</b> – Jubo Unnayan, 2020</li>
+                    <li><b>Computer Office Applications</b> – Technical Board, 2020</li>
+                    <li><b>Advanced Mobile Hardware</b> – ST Institute, 2025</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
