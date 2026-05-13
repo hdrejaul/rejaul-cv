@@ -1,1 +1,191 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Management CV - Rejaul Karim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e272e;
+            --accent: #27ae60; /* সার্ভিস ম্যানেজমেন্টের জন্য ট্রাস্টেড গ্রিন কালার */
+            --gold: #d4af37;
+            --bg-gray: #f4f7f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        body { background-color: #ced6e0; padding: 20px 0; }
+
+        .cv-container {
+            background-color: #ffffff;
+            width: 210mm;
+            height: 297mm;
+            margin: auto;
+            display: flex;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 33%;
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 40px 25px;
+        }
+
+        .profile-img {
+            width: 150px; height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            margin: 0 auto 30px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .sidebar h2 {
+            font-size: 14px; text-transform: uppercase; color: var(--accent);
+            margin: 25px 0 12px; border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 5px;
+        }
+
+        .contact-info { font-size: 12px; margin-bottom: 12px; display: flex; align-items: center; color: #dfe6e9; }
+        .contact-info i { margin-right: 12px; color: var(--accent); width: 15px; }
+
+        .skill-tag {
+            font-size: 11px; background: rgba(39, 174, 96, 0.15);
+            padding: 6px 10px; border-radius: 4px; margin-bottom: 8px;
+            border: 1px solid var(--accent); display: block; text-align: center;
+        }
+
+        /* Main Content */
+        .main { width: 67%; padding: 50px 40px; color: #2d3436; }
+
+        .header { margin-bottom: 35px; }
+        .header h1 { font-size: 42px; font-weight: 800; color: var(--primary); line-height: 1; }
+        .header p { font-size: 17px; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-top: 8px; }
+
+        /* NSDA Badge */
+        .nsda-badge {
+            display: flex; align-items: center; background: #fffdf0;
+            border: 2px solid var(--gold); padding: 15px; border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        .nsda-badge i { font-size: 30px; color: var(--gold); margin-right: 15px; }
+        .nsda-badge b { color: #b8860b; font-size: 16px; }
+
+        .section-title {
+            font-size: 17px; font-weight: 800; color: var(--primary);
+            margin-bottom: 15px; border-left: 5px solid var(--accent);
+            padding-left: 12px; text-transform: uppercase;
+        }
+
+        .work-box { margin-bottom: 20px; }
+        .work-top { display: flex; justify-content: space-between; font-weight: 700; font-size: 15px; }
+        .company { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 5px; display: block; }
+
+        .list { padding-left: 15px; margin-top: 8px; list-style-type: disc; }
+        .list li { font-size: 13px; line-height: 1.6; color: #444; margin-bottom: 5px; }
+
+        .edu-item { background: #f8f9fa; padding: 12px; border-radius: 8px; margin-bottom: 10px; font-size: 13px; }
+
+        @media print { body { padding: 0; } .cv-container { box-shadow: none; } }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <img src="https://lh3.googleusercontent.com/d/1AUSmyr1rJgOnt9qzfqT65-D58Gf4AotT" class="profile-img">
+            
+            <h2>Connect</h2>
+            <div class="contact-info"><i class="fas fa-phone"></i> 01517824188</div>
+            <div class="contact-info"><i class="fas fa-envelope"></i> rejaulakash@gmail.com</div>
+            <div class="contact-info"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
+            <div class="contact-info"><i class="fab fa-linkedin"></i> rejaul-akash</div>
+
+            <h2>Management Skills</h2>
+            <div class="skill-tag">Service Operations Lead</div>
+            <div class="skill-tag">Customer Experience (CX)</div>
+            <div class="skill-tag">TAT (Turnaround Time) Optimization</div>
+            <div class="skill-tag">Team Coordination</div>
+            <div class="skill-tag">RMA Inventory Control</div>
+
+            <h2 style="margin-top:auto">Languages</h2>
+            <div class="contact-info"><i class="fas fa-check-circle"></i> Bengali (Native)</div>
+            <div class="contact-info"><i class="fas fa-check-circle"></i> English (Intermediate)</div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <header class="header">
+                <h1>REJAUL KARIM</h1>
+                <p>Technical Service Management Lead</p>
+            </header>
+
+            <!-- NSDA HIGHLIGHT -->
+            <div class="nsda-badge">
+                <i class="fas fa-shield-alt"></i>
+                <div class="nsda-text">
+                    <b>NSDA Certified Professional (Level-2)</b><br>
+                    <small style="color: #666;">Government Accredited Technical Specialist</small>
+                </div>
+            </div>
+
+            <section class="section">
+                <h2 class="section-title">Summary</h2>
+                <p style="font-size: 13.5px; line-height: 1.7; color: #444;">
+                    Strategic **Service Management Professional** with over 4 years of experience in the IoT and tech manufacturing industry. Proven track record in leading after-sales service teams, managing RMA lifecycles, and improving customer satisfaction through efficient technical operations and quality control.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Service Experience</h2>
+                <div class="work-box">
+                    <div class="work-top"><span>Service & RMA Lead</span><span>2021 – Present</span></div>
+                    <span class="company">Inovace Technologies (IoT & Software Firm)</span>
+                    <ul class="list">
+                        <li>Supervising the complete technical service operations and after-sales support.</li>
+                        <li>Managing RMA policies and coordinating with the engineering team for fast repairs.</li>
+                        <li>Maintaining 95%+ service success rate by optimizing spare parts and resource allocation.</li>
+                        <li>Handling high-profile corporate clients for device maintenance and troubleshooting.</li>
+                        <li>Providing data-driven reports on product failure trends to improve manufacturing.</li>
+                    </ul>
+                </div>
+
+                <div class="work-box">
+                    <div class="work-top"><span>After-Sales Support Specialist</span><span>2020 – 2021</span></div>
+                    <span class="company">Technical Manufacturing Hub</span>
+                    <ul class="list">
+                        <li>Managed customer queries and provided initial hardware diagnostic support.</li>
+                        <li>Supervised QC processes to ensure 100% defect-free delivery.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="edu-item">
+                    <b>BSS Honors (Sociology)</b> | National University (2024)
+                </div>
+                <div class="edu-item">
+                    <b>HSC & SSC (Science)</b> | Dhaka Board (2018/2016)
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Key Competencies</h2>
+                <ul class="list" style="columns: 2;">
+                    <li>Service Center ERP</li>
+                    <li>Conflict Resolution</li>
+                    <li>SLA Management</li>
+                    <li>Technical Reporting</li>
+                    <li>SOP Development</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
