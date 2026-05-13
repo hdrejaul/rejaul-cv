@@ -3,184 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Rejaul Karim</title>
+    <title>RMA & QC Specialist CV - Rejaul Karim</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-blue: #004a99;
-            --sidebar-dark: #1e272e;
-            --accent-blue: #00a8ff;
-            --text-color: #2f3640;
+            --primary-navy: #0a3d62;
+            --secondary-blue: #3c6382;
+            --sidebar-gray: #f1f2f6;
+            --accent-gold: #b8860b;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
 
-        body { background-color: #dcdde1; display: flex; justify-content: center; padding: 20px 0; }
+        body { background-color: #f1f2f6; padding: 20px 0; }
 
-        /* A4 Strict Dimensions */
         .cv-container {
             background-color: #ffffff;
             width: 210mm;
-            height: 297mm; /* Fixed A4 Height */
+            height: 297mm;
             display: flex;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
-            overflow: hidden; /* Excess content hidden to maintain A4 */
+            margin: auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
+        /* Sidebar - Left Side */
         .sidebar {
-            width: 30%;
-            background-color: var(--sidebar-dark);
-            color: #ffffff;
+            width: 33%;
+            background-color: var(--sidebar-gray);
             padding: 30px 20px;
-            display: flex;
-            flex-direction: column;
+            border-right: 2px solid #e1e1e1;
         }
 
-        .profile-pic-area { text-align: center; margin-bottom: 20px; }
+        .profile-pic-area { text-align: center; margin-bottom: 25px; }
         .profile-pic {
-            width: 130px; height: 130px;
-            border-radius: 10px;
-            border: 3px solid var(--accent-blue);
+            width: 140px; height: 140px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-navy);
             object-fit: cover;
         }
 
-        .sidebar h2 {
-            font-size: 13px; text-transform: uppercase; letter-spacing: 1px;
-            color: var(--accent-blue); margin: 20px 0 10px;
-            border-left: 3px solid var(--accent-blue); padding-left: 8px;
+        .sidebar-section { margin-bottom: 25px; }
+        .sidebar-section h2 {
+            font-size: 14px; text-transform: uppercase; color: var(--primary-navy);
+            border-bottom: 2px solid var(--primary-navy); padding-bottom: 5px; margin-bottom: 12px;
         }
 
-        .contact-link { font-size: 11px; margin-bottom: 8px; color: #dcdde1; display: flex; align-items: center; }
-        .contact-link i { margin-right: 10px; color: var(--accent-blue); width: 12px; }
+        .info-item { font-size: 12px; margin-bottom: 8px; color: #2f3542; display: flex; align-items: center; }
+        .info-item i { width: 18px; color: var(--secondary-blue); margin-right: 8px; text-align: center; }
 
-        .skill-tag {
-            font-size: 10.5px; background: rgba(0, 168, 255, 0.1);
-            color: #fff; padding: 4px 8px; border-radius: 4px;
-            margin-bottom: 6px; border: 1px solid rgba(0, 168, 255, 0.3);
+        .skill-list { list-style: none; }
+        .skill-item {
+            font-size: 11px; background: #fff; border: 1px solid #d1d8e0;
+            padding: 5px 10px; border-radius: 20px; margin-bottom: 6px;
+            display: inline-block; font-weight: 600; color: var(--primary-navy);
         }
 
-        .main-content { width: 70%; padding: 35px 40px; color: var(--text-color); }
+        /* Main Content - Right Side */
+        .main-content { width: 67%; padding: 40px; }
 
-        .header-section { margin-bottom: 25px; border-bottom: 2px solid var(--primary-blue); padding-bottom: 15px; }
-        .header-section h1 { font-size: 36px; color: var(--primary-blue); letter-spacing: -1px; }
-        .header-section p { font-size: 16px; font-weight: 600; color: #555; text-transform: uppercase; letter-spacing: 1.5px; }
+        .name-header { margin-bottom: 30px; }
+        .name-header h1 { font-size: 38px; color: var(--primary-navy); font-weight: 900; line-height: 1; }
+        .name-header p { font-size: 16px; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
 
-        .section-header {
-            font-size: 16px; font-weight: 800; text-transform: uppercase;
-            color: var(--primary-blue); margin-bottom: 15px;
+        .content-section { margin-bottom: 25px; }
+        .section-title {
+            font-size: 16px; font-weight: 800; color: var(--primary-navy);
+            text-transform: uppercase; border-left: 5px solid var(--accent-gold);
+            padding-left: 10px; margin-bottom: 15px; background: #f9f9f9;
         }
 
-        .work-item { margin-bottom: 20px; }
-        .work-top { display: flex; justify-content: space-between; font-weight: 700; font-size: 14px; color: var(--primary-blue); }
-        .work-date { font-size: 11px; color: #7f8c8d; }
-        .company-label { font-size: 12px; color: var(--accent-blue); font-weight: 700; margin-bottom: 8px; display: block; }
+        .work-item { margin-bottom: 18px; }
+        .work-header { display: flex; justify-content: space-between; font-weight: 700; font-size: 14px; color: #222; }
+        .work-company { font-size: 13px; color: var(--secondary-blue); font-weight: 600; display: block; margin-bottom: 5px; }
+        .work-date { font-size: 11px; color: #747d8c; }
 
-        .point-list li {
-            font-size: 12.5px; line-height: 1.5; color: #444;
-            margin-bottom: 5px; padding-left: 18px; position: relative; list-style: none;
-        }
-        .point-list li::before {
-            content: "\f00c"; font-family: 'Font Awesome 6 Free'; font-weight: 900;
-            position: absolute; left: 0; color: var(--accent-blue); font-size: 10px;
-        }
+        .bullet-list { padding-left: 18px; }
+        .bullet-list li { font-size: 12.5px; line-height: 1.6; color: #444; margin-bottom: 5px; list-style-type: square; }
 
-        .edu-card {
-            background-color: #f9f9f9; padding: 10px 12px;
-            border-radius: 4px; margin-bottom: 10px; border-left: 4px solid var(--primary-blue);
-        }
+        .edu-item { font-size: 13px; margin-bottom: 10px; }
+        .edu-item b { color: var(--primary-navy); }
 
         @media print {
-            body { padding: 0; }
-            .cv-container { box-shadow: none; margin: 0; width: 210mm; height: 297mm; }
+            body { background: none; padding: 0; }
+            .cv-container { box-shadow: none; border: none; }
         }
     </style>
 </head>
 <body>
 
     <div class="cv-container">
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="profile-pic-area">
                 <img src="https://lh3.googleusercontent.com/d/1AUSmyr1rJgOnt9qzfqT65-D58Gf4AotT" alt="Rejaul Karim" class="profile-pic">
             </div>
 
-            <section>
+            <div class="sidebar-section">
                 <h2>Contact</h2>
-                <div class="contact-link"><i class="fas fa-phone-alt"></i> 01517824188</div>
-                <div class="contact-link"><i class="fas fa-envelope"></i> rejaulakash@gmail.com</div>
-                <div class="contact-link"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
-                <div class="contact-link"><i class="fab fa-linkedin"></i> linkedin.com/in/rejaul-akash</div>
-            </section>
+                <div class="info-item"><i class="fas fa-phone-alt"></i> 01517824188</div>
+                <div class="info-item"><i class="fas fa-envelope"></i> rejaulakash@gmail.com</div>
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
+                <div class="info-item"><i class="fab fa-linkedin"></i> linkedin.com/in/rejaul-akash</div>
+            </div>
 
-            <section>
-                <h2>Key Skills</h2>
-                <div class="skill-tag">RMA Operations Lead</div>
-                <div class="skill-tag">Hardware Diagnosis</div>
-                <div class="skill-tag">Circuit Repair</div>
-                <div class="skill-tag">QC & Production</div>
-                <div class="skill-tag">MS Office & Google Workspace</div>
-            </section>
+            <div class="sidebar-section">
+                <h2>Core Expertise</h2>
+                <div class="skill-item">RMA Process Lead</div>
+                <div class="skill-item">Quality Control (QC)</div>
+                <div class="skill-item">Fault Diagnosis</div>
+                <div class="skill-item">SMD Soldering</div>
+                <div class="skill-item">Inventory Management</div>
+                <div class="skill-item">Production Assembly</div>
+            </div>
 
-            <section style="margin-top: auto;">
+            <div class="sidebar-section">
+                <h2>Certifications</h2>
+                <div class="info-item"><i class="fas fa-certificate"></i> NSDA Mobile Servicing L-2</div>
+                <div class="info-item"><i class="fas fa-certificate"></i> Electronics Training (Jubo)</div>
+                <div class="info-item"><i class="fas fa-certificate"></i> Computer Applications</div>
+            </div>
+
+            <div class="sidebar-section" style="margin-top: auto;">
                 <h2>Languages</h2>
-                <div class="contact-link"><i class="fas fa-check"></i> Bengali (Native)</div>
-                <div class="contact-link"><i class="fas fa-check"></i> English (Intermediate)</div>
-                
-                <h2 style="margin-top:15px;">Personal</h2>
-                <div style="font-size: 10px; color: #bdc3c7; line-height: 1.6;">
-                    DOB: Nov 9, 1999<br>
-                    Nationality: Bangladeshi
-                </div>
-            </section>
+                <div class="info-item"><i class="fas fa-language"></i> Bengali (Native)</div>
+                <div class="info-item"><i class="fas fa-language"></i> English (Intermediate)</div>
+            </div>
         </aside>
 
+        <!-- Main Content -->
         <main class="main-content">
-            <header class="header-section">
+            <header class="name-header">
                 <h1>REJAUL KARIM</h1>
-                <p>Technical Executive (RMA)</p>
+                <p>RMA & QC Operations Specialist</p>
             </header>
 
-            <section class="work-item">
-                <h2 class="section-header">Professional Profile</h2>
-                <p style="font-size: 12.5px; line-height: 1.6; color: #444;">
-                    Technical professional with 4+ years of experience in electronics production and RMA management. Specialized in leading RMA processes, precision hardware repairs, and collaborating with engineering teams to improve product quality.
+            <section class="content-section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p style="font-size: 13px; color: #444; line-height: 1.6; text-align: justify;">
+                    Highly skilled Technical Executive with over 4 years of hands-on experience in **RMA (Return Merchandise Authorization)** and **Quality Control**. Expert in identifying hardware defects, executing complex repairs, and optimizing production assembly. Proven track record in maintaining 98%+ repair success rates and providing vital technical feedback to engineering teams for product enhancement.
                 </p>
             </section>
 
-            <section class="work-item">
-                <h2 class="section-header">Experience</h2>
-                <div class="work-top">
-                    <span>Technical Executive (RMA Lead)</span>
-                    <span class="work-date">Oct 2021 – Present</span>
+            <section class="content-section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="work-item">
+                    <div class="work-header">
+                        <span>Technical Executive (RMA Operations Lead)</span>
+                        <span class="work-date">Oct 2021 – Present</span>
+                    </div>
+                    <span class="work-company">Inovace Technologies, Dhaka</span>
+                    <ul class="bullet-list">
+                        <li>End-to-end management of the RMA lifecycle, from fault intake to final restoration.</li>
+                        <li>Lead diagnostic procedures to identify root causes of device failures in returned units.</li>
+                        <li>Perform high-precision soldering and circuit-level repairs on faulty PCAs.</li>
+                        <li>Collaborate with the QC team to ensure that post-repair units meet strict factory standards.</li>
+                        <li>Provide monthly data-driven reports on common failure trends to the R&D team.</li>
+                    </ul>
                 </div>
-                <span class="company-label">Inovace Technologies, Dhaka</span>
-                <ul class="point-list">
-                    <li>Managing complete RMA process, fault diagnosis, and precision repair.</li>
-                    <li>Conducting advanced troubleshooting for root cause identification.</li>
-                    <li>Providing technical feedback to the Engineering Team for design improvement.</li>
-                    <li>Supporting production line by fixing faulty units from QC phase.</li>
-                    <li>Maintaining detailed technical logs and service documentation.</li>
-                </ul>
+
+                <div class="work-item">
+                    <div class="work-header">
+                        <span>Production & QC Associate</span>
+                        <span class="work-date">Jan 2020 – Sept 2021</span>
+                    </div>
+                    <span class="work-company">Technical Support & Manufacturing Sector</span>
+                    <ul class="bullet-list">
+                        <li>Executed rigorous Quality Control (QC) checks on newly assembled electronic devices.</li>
+                        <li>Monitored assembly lines to identify production bottlenecks and technical errors.</li>
+                        <li>Managed spare parts inventory for the repair and production departments.</li>
+                    </ul>
+                </div>
             </section>
 
-            <section class="work-item">
-                <h2 class="section-header">Education</h2>
-                <div class="edu-card">
-                    <div class="work-top"><span>BSS Honors (Sociology)</span><span class="work-date">2024</span></div>
-                    <div style="font-size: 12px; color: #666;">National University (Polash Shilpanchal Govt. College)</div>
+            <section class="content-section">
+                <h2 class="section-title">Education</h2>
+                <div class="edu-item">
+                    <b>BSS Honors (Sociology)</b> | 2024<br>
+                    National University, Polash Shilpanchal Govt. College
                 </div>
-                <div class="edu-card">
-                    <div class="work-top"><span>HSC & SSC (Science)</span><span class="work-date">2018 & 2016</span></div>
-                    <div style="font-size: 12px; color: #666;">Science Background - Passed</div>
+                <div class="edu-item">
+                    <b>HSC & SSC (Science Background)</b> | 2016 - 2018<br>
+                    Focused on Physics, Chemistry, and Mathematics.
                 </div>
             </section>
 
-            <section class="work-item" style="margin-bottom: 0;">
-                <h2 class="section-header">Certifications</h2>
-                <ul class="point-list">
-                    <li><b>NSDA Certified Mobile Servicing Level-2</b> (2026)</li>
-                    <li><b>Electronics Training (Best Trainee)</b> – Jubo Unnayan, 2020</li>
-                    <li><b>Computer Office Applications</b> – Technical Board, 2020</li>
-                    <li><b>Mobile Servicing (H&S)</b> – ST Institute, 2025</li>
+            <section class="content-section">
+                <h2 class="section-title">Technical Skills</h2>
+                <ul class="bullet-list" style="columns: 2;">
+                    <li>RMA Tracking Systems</li>
+                    <li>Circuit Troubleshooting</li>
+                    <li>Oscilloscope & Multimeter</li>
+                    <li>Refurbishment Skills</li>
+                    <li>Technical Documentation</li>
+                    <li>Hardware-Software Sync</li>
                 </ul>
             </section>
         </main>
