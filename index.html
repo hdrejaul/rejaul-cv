@@ -1,1 +1,181 @@
-<a href="./cv1/">Open CV 2</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejaul Karim | Professional Series</title>
+    <!-- Premium Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* ব্যাকগ্রাউন্ড কালার - একদম কালো না, প্রিমিয়াম ডার্ক গ্রে */
+            --bg-color: #1e293b; 
+            --card-bg: #334155; /* একটু হালকা গ্রে */
+            --text-white: #f8fafc;
+            --accent-color: #38bdf8; /* স্কাই ব্লু হাইলাইট */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+        }
+
+        .profile-header {
+            margin-bottom: 50px;
+        }
+
+        .profile-name {
+            font-size: 45px;
+            font-weight: 800;
+            color: var(--text-white);
+            letter-spacing: -1.5px;
+            margin-bottom: 8px;
+        }
+
+        .profile-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .cv-list {
+            list-style: none;
+            /* মাউস সরালে যেন সব আবার ঠিক হয়ে যায় */
+            transition: all 0.5s ease;
+        }
+
+        .cv-item {
+            margin-bottom: 20px;
+        }
+
+        .cv-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--card-bg);
+            padding: 24px 30px;
+            text-decoration: none;
+            color: var(--text-white);
+            font-weight: 600;
+            font-size: 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            
+            /* স্মুথ বড় হওয়ার ইফেক্ট */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* মাউস নিলে বড় হবে */
+        .cv-link:hover {
+            transform: scale(1.1);
+            background: #475569;
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            z-index: 5;
+        }
+
+        /* মাউস নিলে অন্যগুলো হালকা ঝাপসা হবে */
+        .cv-list:hover .cv-item:not(:hover) {
+            opacity: 0.4;
+            transform: scale(0.95);
+        }
+
+        .emoji-box {
+            font-size: 26px;
+            margin-right: 20px;
+        }
+
+        .arrow {
+            font-size: 20px;
+            color: var(--accent-color);
+            transition: 0.3s;
+        }
+
+        .footer {
+            margin-top: 60px;
+            font-size: 11px;
+            color: #94a3b8;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-header">
+            <h1 class="profile-name">Rejaul Karim</h1>
+            <span class="profile-title">Technical Operations Lead</span>
+        </div>
+
+        <div class="cv-list">
+            <div class="cv-item">
+                <a href="https://hdrejaul.github.io/rejaul-cv/cv1/" class="cv-link" target="_blank">
+                    <span style="display: flex; align-items: center;">
+                        <span class="emoji-box">⚙️</span> Production & Ops
+                    </span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+
+            <div class="cv-item">
+                <a href="https://hdrejaul.github.io/rejaul-cv/cv2/" class="cv-link" target="_blank">
+                    <span style="display: flex; align-items: center;">
+                        <span class="emoji-box">🛡️</span> RMA & Quality
+                    </span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+
+            <div class="cv-item">
+                <a href="https://hdrejaul.github.io/rejaul-cv/cv3/" class="cv-link" target="_blank">
+                    <span style="display: flex; align-items: center;">
+                        <span class="emoji-box">📱</span> Mobile Engineering
+                    </span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+
+            <div class="cv-item">
+                <a href="https://hdrejaul.github.io/rejaul-cv/cv4/" class="cv-link" target="_blank">
+                    <span style="display: flex; align-items: center;">
+                        <span class="emoji-box">👔</span> Service Management
+                    </span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+
+            <div class="cv-item">
+                <a href="https://hdrejaul.github.io/rejaul-cv/cv4/" class="cv-link" target="_blank">
+                    <span style="display: flex; align-items: center;">
+                        <span class="emoji-box">💎</span> Senior Expert Profile
+                    </span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            Elite Series Portfolio • 2026
+        </div>
+    </div>
+
+</body>
+</html>
