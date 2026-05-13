@@ -1,233 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional CV - Rejaul Karim</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>CV - Rejaul Karim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f4f7f6;
-            display: flex;
-            justify-content: center;
-            padding: 30px;
-        }
-
-        .cv-container {
-            background-color: #fff;
-            width: 210mm;
-            min-height: 297mm;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            display: grid;
-            grid-template-columns: 32% 68%;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            background-color: #0d2c44;
-            color: #fff;
-            padding: 40px 25px;
-        }
-
-        .profile-pic {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 4px solid #3498db;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto 30px auto;
-            background-color: #fff;
-        }
-
-        .sidebar-title {
-            font-size: 15px;
-            text-transform: uppercase;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            color: #3498db;
-            letter-spacing: 1px;
-        }
-
-        .contact-item {
-            font-size: 13px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-item i {
-            margin-right: 12px;
-            color: #3498db;
-            width: 15px;
-            text-align: center;
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 45px;
-            color: #333;
-        }
-
-        .header h1 {
-            font-size: 36px;
-            color: #0d2c44;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-
-        .job-title {
-            font-size: 18px;
-            color: #3498db;
-            font-weight: 600;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-
-        .section-title {
-            font-size: 17px;
-            font-weight: 700;
-            color: #0d2c44;
-            border-left: 5px solid #3498db;
-            padding-left: 10px;
-            margin: 25px 0 15px 0;
-            text-transform: uppercase;
-        }
-
-        .description {
-            font-size: 13.5px;
-            line-height: 1.6;
-            color: #555;
-            list-style-position: outside;
-            margin-left: 18px;
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 700;
-            font-size: 14px;
-            color: #0d2c44;
-        }
-
-        .sub-info {
-            color: #3498db;
-            font-size: 13px;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        @media print {
-            body { background: none; padding: 0; }
-            .cv-container { box-shadow: none; border: 1px solid #eee; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: #f4f4f4; display: flex; justify-content: center; padding: 0; }
+        .cv-container { background-color: #ffffff; width: 210mm; min-height: 297mm; display: flex; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        .sidebar { width: 32%; background-color: #1a242f; color: #ffffff; padding: 45px 25px; }
+        .profile-pic { width: 150px; height: 150px; border-radius: 50%; border: 4px solid #4a90e2; object-fit: cover; display: block; margin: 0 auto 30px auto; background-color: #fff; }
+        .sidebar-title { font-size: 15px; text-transform: uppercase; border-bottom: 2px solid #4a90e2; padding-bottom: 5px; margin-bottom: 15px; color: #4a90e2; letter-spacing: 1px; margin-top: 25px; }
+        .contact-item { font-size: 12px; margin-bottom: 12px; display: flex; align-items: center; color: #bdc3c7; }
+        .contact-item i { margin-right: 12px; color: #4a90e2; width: 15px; text-align: center; }
+        .main-content { width: 68%; padding: 50px 45px; color: #333; }
+        .header h1 { font-size: 40px; color: #1a242f; text-transform: uppercase; line-height: 1; }
+        .header .subtitle { font-size: 18px; color: #4a90e2; font-weight: 600; margin-top: 10px; text-transform: uppercase; }
+        .section-title { font-size: 17px; font-weight: bold; text-transform: uppercase; color: #1a242f; border-left: 5px solid #4a90e2; padding-left: 10px; margin: 25px 0 15px 0; }
+        .description { font-size: 13.5px; line-height: 1.7; color: #444; list-style-position: outside; margin-left: 18px; }
+        .description li { margin-bottom: 8px; }
+        .job-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 14.5px; margin-bottom: 5px; }
+        .job-date { font-size: 12px; color: #777; }
+        @media print { body { background: none; } .cv-container { box-shadow: none; border: none; width: 100%; height: 100%; } }
     </style>
 </head>
 <body>
-
     <div class="cv-container">
         <aside class="sidebar">
-            <img src="https://lh3.googleusercontent.com/d/1AUSmyr1rJgOnt9qzfqT65-D58Gf4AotT" alt="Rejaul Karim" class="profile-pic">
-            
-            <section class="sidebar-section">
-                <h2 class="sidebar-title">Contact</h2>
-                <div class="contact-item"><i class="fas fa-phone"></i> 01517824188</div>
-                <div class="contact-item"><i class="fas fa-envelope"></i> rejaulakash@gmail.com</div>
-                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> 291 New Elephant Road, Dhaka</div>
-                <div class="contact-item"><i class="fab fa-linkedin"></i> linkedin.com/in/rejaul-akash/</div>
-            </section>
-
-            <section class="sidebar-section">
-                <h2 class="sidebar-title">Expertise</h2>
-                <div class="contact-item">• MS Office Suite</div>
-                <div class="contact-item">• Mobile Repairing</div>
-                <div class="contact-item">• Electronics Troubleshooting</div>
-                <div class="contact-item">• Adobe Creative Suite</div>
-            </section>
-
-            <section class="sidebar-section">
-                <h2 class="sidebar-title">Languages</h2>
-                <div class="contact-item">Bengali: Native</div>
-                <div class="contact-item">English: Intermediate (B1)</div>
-            </section>
-
-            <section class="sidebar-section">
-                <h2 class="sidebar-title">Personal Details</h2>
-                <div class="contact-item">DOB: Nov 9, 1999</div>
-                <div class="contact-item">Nationality: Bangladeshi</div>
-                <div class="contact-item">Permanent Address: Narsingdi</div>
-            </section>
+            <img src="https://lh3.googleusercontent.com/d/1AUSmyr1rJgOnt9qzfqT65-D58Gf4AotT" alt="Profile" class="profile-pic">
+            <h1 style="text-align: center; font-size: 24px;">REJAUL KARIM</h1>
+            <p style="text-align: center; color: #4a90e2; font-size: 14px; margin-bottom: 30px;">Technical Executive (RMA)</p>
+            <h2 class="sidebar-title">Contact</h2>
+            <div class="contact-item"><i class="fas fa-phone"></i> 01517824188</div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> rejaulakash@gmail.com</div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
+            <h2 class="sidebar-title">Expertise</h2>
+            <div class="contact-item">• RMA Management</div>
+            <div class="contact-item">• Hardware Diagnosis</div>
+            <div class="contact-item">• Production Support</div>
+            <h2 class="sidebar-title">Languages</h2>
+            <div class="contact-item">Bengali: Native</div>
+            <div class="contact-item">English: Intermediate</div>
         </aside>
 
         <main class="main-content">
             <div class="header">
                 <h1>REJAUL KARIM</h1>
-                <p class="job-title">Technical Executive</p>
+                <p class="subtitle">Technical Executive (RMA)</p>
             </div>
-
-            <section>
-                <h2 class="section-title">Career Objective</h2>
-                <p class="description" style="margin-left: 0;">
-                    Dedicated professional with hands-on experience in electronics and computer applications, including NSDA-certified Mobile Servicing Level-2 expertise. Seeking a challenging corporate role where I can utilize my technical skills to contribute to organizational growth.
-                </p>
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="description" style="margin-left: 0;">Dedicated technical professional with over 4 years of experience in electronics production and RMA management. Expert in leading RMA workflows, diagnosing hardware faults, and collaborating with engineering teams for zero-defect quality control.</p>
             </section>
-
-            <section>
+            <section class="section">
                 <h2 class="section-title">Work Experience</h2>
-                <div class="info-row">
-                    <span>Technical Executive (Production & RMA)</span>
-                    <span>Oct 2021 - Present</span>
-                </div>
-                <p class="sub-info">Inovace Technologies, Dhaka, Bangladesh</p>
+                <div class="job-header"><span>Technical Executive (RMA)</span><span class="job-date">Oct 2021 – Present</span></div>
+                <div style="color: #4a90e2; font-weight: 600; font-size: 13px; margin-bottom: 10px;">Inovace Technologies, Dhaka</div>
                 <ul class="description">
-                    <li>Diagnose hardware and software issues of faulty devices.</li>
-                    <li>Manage product replacement processes and RMA operations.</li>
-                    <li>Support large production batches and quality control.</li>
-                    <li>Liaise between customers and technical departments.</li>
+                    <li>Lead comprehensive RMA operations, focusing on diagnosis and repair of returned devices.</li>
+                    <li>Collaborate with the Engineering Team to resolve complex hardware architecture issues.</li>
+                    <li>Support production assembly and prepare new batches for organizational delivery.</li>
+                    <li>Ensure zero-defect output by fixing units identified as faulty during production.</li>
                 </ul>
             </section>
-
-            <section>
+            <section class="section">
                 <h2 class="section-title">Education</h2>
-                <div class="info-row">
-                    <span>BSS Honors (Sociology)</span>
-                    <span>Passed: 2024</span>
-                </div>
-                <p class="sub-info">National University</p>
-
-                <div class="info-row">
-                    <span>HSC (Science)</span>
-                    <span>Passed: 2018</span>
-                </div>
-                <p class="sub-info">Scholastica Model College, Narsingdi</p>
-
-                <div class="info-row">
-                    <span>SSC (Science)</span>
-                    <span>Passed: 2016</span>
-                </div>
-                <p class="sub-info">Bashgari New Model High School</p>
+                <div class="job-header"><span>BSS Honors (Sociology)</span><span>Passed: 2024</span></div>
+                <div style="font-size: 13px; margin-bottom: 10px;">National University, Bangladesh</div>
+                <div class="job-header"><span>HSC & SSC (Science)</span><span>2018 & 2016</span></div>
+                <div style="font-size: 13px;">Science Background - Passed</div>
             </section>
-
-            <section>
-                <h2 class="section-title">Certifications</h2>
+            <section class="section">
+                <h2 class="section-title">Certifications & Training</h2>
                 <ul class="description">
-                    <li><b>NSDA Certified Mobile Servicing Level-2 (2026)</b></li>
-                    <li><b>Electronics Training</b> - Jubo Unnayan (Best Trainee, 2020)</li>
-                    <li><b>Computer Office Applications</b> - Technical Board (2020)</li>
-                    <li><b>Mobile Servicing</b> - ST Institute (2025)</li>
+                    <li><b>NSDA Certified Mobile Servicing Level-2</b> – 2026.</li>
+                    <li><b>Mobile Servicing (Hardware & Software)</b> – ST Institute of Mobile Technology, 2025.</li>
+                    <li><b>Electronics Training (Best Trainee)</b> – Jubo Unnayan, 2020.</li>
+                    <li><b>Computer Office Applications</b> – Technical Board, 2020.</li>
                 </ul>
             </section>
         </main>
     </div>
-
 </body>
 </html>
