@@ -196,7 +196,9 @@
         .profile-main-name { font-size: 36px; font-weight: 800; color: var(--text-white); margin-bottom: 5px; }
         .profile-title { font-size: 12px; color: var(--accent-color); letter-spacing: 3px; text-transform: uppercase; font-weight: 700; }
 
-        .cv-item { margin-bottom: 14px; list-style: none; }
+        .cv-list { list-style: none; transition: all 0.5s ease; }
+        .cv-item { margin-bottom: 14px; transition: all 0.3s ease; }
+        
         .cv-link {
             display: flex;
             align-items: center;
@@ -208,12 +210,45 @@
             font-weight: 600;
             border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+            cursor: pointer;
         }
 
-        .cv-link:hover { border-color: var(--accent-color); background: #24334a; transform: translateY(-3px); }
+        /* ল্যাপটপ/মাউস ইউজারদের জন্য Hover */
+        @media (hover: hover) {
+            .cv-link:hover {
+                transform: scale(1.1);
+                background: #24334a;
+                border-color: var(--accent-color);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+                z-index: 5;
+            }
+            .cv-list:hover .cv-item:not(:hover) {
+                opacity: 0.4;
+                transform: scale(0.95);
+            }
+        }
+
+        /* মোবাইল/টাচ ইউজারদের জন্য স্পেশাল ডাবল ক্লিফ এফেক্ট ক্লাস */
+        .cv-link.mobile-active {
+            transform: scale(1.1);
+            background: #24334a;
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            z-index: 5;
+        }
+
         .emoji { font-size: 20px; margin-right: 15px; }
+        .arrow { style="color: var(--accent-color); transition: 0.3s;" }
+
+        .footer {
+            margin-top: 40px; 
+            color: #4b5563; 
+            font-size: 10px; 
+            letter-spacing: 3px; 
+            text-transform: uppercase;
+        }
 
     </style>
 </head>
@@ -240,17 +275,16 @@
                 </div>
             </div>
             
-            <!-- আপনার নতুন টেক্সট এখানে -->
-            <p class="lock-instruction"><i class="fas fa-key"></i> সিভি দেখতে পাসওয়ার্ড দিন</p>
+            <p class="lock-instruction"><i class="fas fa-key"></i> সিভি দেখতে পাসওয়ার্ড দিন</p>
             
             <div class="input-group">
                 <input type="password" id="passInput" placeholder="••••••••">
             </div>
             <button onclick="checkPass()">Unlock Profile</button>
-            <p id="error-msg"><i class="fas fa-exclamation-circle"></i> ভুল পাসওয়ার্ড! আবার চেষ্টা করুন।</p>
+            <p id="error-msg"><i class="fas fa-exclamation-circle"></i> ভুল পাসওয়ার্ড! আবার চেষ্টা করুন।</p>
         </div>
 
-        <!-- সিভি সেকশন -->
+        <!-- সিভি সেকশন (লগইন সাকসেস হলে মোবাইল ইফেক্টসহ শো করবে) -->
         <div id="cv-section">
             <div class="profile-header">
                 <h1 class="profile-main-name">REJAUL KARIM</h1>
@@ -261,47 +295,48 @@
                 <div class="cv-item">
                     <a href="https://hdrejaul.github.io/rejaul-cv/cv1/" class="cv-link" target="_blank">
                         <span><span class="emoji">⚙️</span> Production & Ops</span>
-                        <span style="color: var(--accent-color);">→</span>
+                        <span class="arrow">→</span>
                     </a>
                 </div>
                 <div class="cv-item">
                     <a href="https://hdrejaul.github.io/rejaul-cv/cv2/" class="cv-link" target="_blank">
                         <span><span class="emoji">🛡️</span> RMA & Quality</span>
-                        <span style="color: var(--accent-color);">→</span>
+                        <span class="arrow">→</span>
                     </a>
                 </div>
                 <div class="cv-item">
                     <a href="https://hdrejaul.github.io/rejaul-cv/cv3/" class="cv-link" target="_blank">
                         <span><span class="emoji">📱</span> Mobile Engineering</span>
-                        <span style="color: var(--accent-color);">→</span>
+                        <span class="arrow">→</span>
                     </a>
                 </div>
                 <div class="cv-item">
                     <a href="https://hdrejaul.github.io/rejaul-cv/cv4/" class="cv-link" target="_blank">
                         <span><span class="emoji">👔</span> Service Management</span>
-                        <span style="color: var(--accent-color);">→</span>
+                        <span class="arrow">→</span>
                     </a>
                 </div>
                 <div class="cv-item">
                     <a href="https://hdrejaul.github.io/rejaul-cv/cv4/" class="cv-link" target="_blank">
                         <span><span class="emoji">💎</span> Senior Expert</span>
-                        <span style="color: var(--accent-color);">→</span>
+                        <span class="arrow">→</span>
                     </a>
                 </div>
             </div>
             
-            <p style="margin-top: 40px; color: #4b5563; font-size: 10px; letter-spacing: 3px; text-transform: uppercase;">SECURE PORTFOLIO • 2026</p>
+            <p class="footer">SECURE PORTFOLIO • 2026</p>
         </div>
     </div>
 
     <script>
         function checkPass() {
             const pass = document.getElementById('passInput').value;
-            const correctPass = "0177"; // আপনার পাসওয়ার্ড এখানে দিন
+            const correctPass = "0177"; 
 
             if (pass === correctPass) {
                 document.getElementById('login-section').style.display = 'none';
                 document.getElementById('cv-section').style.display = 'block';
+                setupMobileInteractions(); // লগইন হওয়ার পর মোবাইল ক্লিক লজিক চালু হবে
             } else {
                 document.getElementById('error-msg').style.display = 'block';
                 document.getElementById('passInput').value = '';
@@ -313,6 +348,48 @@
                 checkPass();
             }
         });
+
+        // মোবাইলের জন্য ফার্স্ট-ক্লিক (জুম) এবং সেকেন্ড-ক্লিক (ওপেন) লজিক
+        function setupMobileInteractions() {
+            const links = document.querySelectorAll('.cv-link');
+            const items = document.querySelectorAll('.cv-item');
+
+            links.forEach((link, index) => {
+                link.addEventListener('click', function(e) {
+                    // চেক করবে ডিভাইসটি টাচ স্ক্রিন কি না (কোনো মাউস হোভার নেই)
+                    if (window.matchMedia("(hover: none)").matches) {
+                        if (!this.classList.contains('mobile-active')) {
+                            // প্রথম ক্লিকে লিঙ্ক ওপেন হওয়া আটকাবে
+                            e.preventDefault();
+                            
+                            // অন্য সব বাটন ছোট করবে এবং ব্লার/অপাসিটি কমিয়ে দেবে
+                            links.forEach(l => l.classList.remove('mobile-active'));
+                            items.forEach(item => item.style.opacity = "0.4");
+                            items.forEach(item => item.style.transform = "scale(0.95)");
+                            
+                            // শুধুমাত্র সিলেক্টেড বাটনটি বড় করবে
+                            this.classList.add('mobile-active');
+                            items[index].style.opacity = "1";
+                            items[index].style.transform = "scale(1)";
+                        } else {
+                            // দ্বিতীয় ক্লিকে স্বাভাবিকভাবে লিঙ্ক ওপেন হবে এবং জুম আউট হয়ে যাবে
+                            this.classList.remove('mobile-active');
+                        }
+                    }
+                });
+            });
+
+            // স্ক্রিনের ফালতু জায়গায় বা ফাঁকা স্থানে ক্লিক করলে সব বাটন আবার আগের মতো নরমাল হয়ে যাবে
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.cv-link')) {
+                    links.forEach(l => l.classList.remove('mobile-active'));
+                    items.forEach(item => {
+                        item.style.opacity = "1";
+                        item.style.transform = "scale(1)";
+                    });
+                }
+            });
+        }
     </script>
 </body>
 </html>
